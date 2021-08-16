@@ -12,6 +12,9 @@ import ButtonRepo from '@/components/ButtonRepo.vue'
       >
         About Page
         <br />
+        <router-link to="/app">app</router-link> |
+        <router-link to="/app/pars/1">p 1</router-link> |
+<router-link to="/logout">out</router-link> |
         <span class="text-indigo-600">Vite 2.x + Vue 3.x + Tailwind 2.x</span>
       </h2>
       <div class="flex mt-8 lg:flex-shrink-0 lg:mt-0">
@@ -21,6 +24,7 @@ import ButtonRepo from '@/components/ButtonRepo.vue'
             class="inline-flex items-center justify-center px-5 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none"
             >Back Home</router-link
           >
+
         </div>
         <ButtonRepo />
       </div>

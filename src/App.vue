@@ -6,7 +6,11 @@
       </div>
     </header>
     <main>
-      <router-view/>
+      <router-view v-slot="{ Component }">
+      <Suspense>
+        <component :is="Component" />
+      </Suspense>
+    </router-view>
     </main>
   </div>
 </template>

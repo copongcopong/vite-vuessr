@@ -1,13 +1,22 @@
 {
-  "name": "vite2-vue3-tailwind2-starter",
+  "name": "vite-vue-spa",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "serve:dist": "npm run build && sirv dist -s #needs `npm i sirv-cli -g`"
   },
   "dependencies": {
+    "@vee-validate/rules": "^4.4.7",
+    "@vueuse/core": "^5.3.0",
+    "@vueuse/integrations": "^5.3.0",
+    "axios": "^0.21.1",
+    "pinia": "^2.0.0-rc.4",
+    "sirv-cli": "^1.0.14",
+    "universal-cookie": "^4.0.4",
+    "vee-validate": "^4.4.9",
     "vue": "^3.2.2",
     "vue-router": "^4.0.11"
   },
