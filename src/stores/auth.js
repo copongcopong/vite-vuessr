@@ -5,7 +5,6 @@ import axios from 'axios';
 
 const apiuri = import.meta.env.VITE_API_BASEURI;
 const cookiename = 'authToken';
-//const cookies = useUniversalCookies(['authToken']);
 let ucookies, cookies;
 export const useAuth = defineStore('auth', {
   state () {
