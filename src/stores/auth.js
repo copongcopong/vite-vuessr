@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { useCookies } from '@vueuse/integrations/useCookies';
+import { useCookies } from '@vueuse/integrations';
 import axios from 'axios';
 
 const apiuri = import.meta.env.VITE_API_BASEURI;
