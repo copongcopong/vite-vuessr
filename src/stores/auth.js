@@ -1,9 +1,12 @@
 import { defineStore } from 'pinia';
-import { useCookies } from '@vueuse/integrations';
+import { createCookies } from '@vueuse/integrations';
+
 import axios from 'axios';
 
 const apiuri = import.meta.env.VITE_API_BASEURI;
-const cookies = useCookies(['authToken']);
+const cookiename = 'authToken';
+//const cookies = useUniversalCookies(['authToken']);
+let ucookies, cookies;
 export const useAuth = defineStore('auth', {
   state () {
     var a, user, token, expires;
@@ -23,20 +26,24 @@ export const useAuth = defineStore('auth', {
     }
   },
   actions: {
+    initCookie (request) {
+      ucookies = createCookies(request);
+      cookies = ucookies([cookiename]);
+    },
     isLoggedIn () {
       
-      const ok = cookies.get('authToken');
+      const ok = cookies.get(cookiename);
 
-      console.log('isloggedin', ok, !!ok)
+      //console.log('isloggedin', !!ok)
 
       return !!ok;
     },
     tagAsAuth (token) {
-      cookies.set('authToken', token);
+      cookies.set(cookiename, token);
       this.token = token;
     },
     removeAuthTag () {
-      cookies.remove('authToken');
+      cookies.remove(cookiename);
     },
     async doLogin (params) {
       console.log(params);

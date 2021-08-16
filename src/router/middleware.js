@@ -2,12 +2,13 @@ import { useAuth } from '@/stores/auth';
 export { createMiddleware };
 
 function createMiddleware (context) {
-  const { pinia, router } = context;
+  const { pinia, router, request } = context;
   const auth = useAuth(pinia);
+  auth.initCookie(request); //required for SSR compatibility of auth.isLoggedIn()
   router.beforeEach((to, from, next) => {
     //const auth = useAuth(pinia);
-    console.log('router > mid '+ to.path, import.meta.env.SSR);
-    console.log({auth, to}, auth.isLoggedIn(), auth.auth)
+    var at = (import.meta.env.SSR) ? 'ssr' : 'client';
+    console.log(at + ':router > mid ', {to: to.path, isLoggedIn: auth.isLoggedIn()});
 
     if (auth.isLoggedIn()) {
       if (to.path === '/login') return next('/app');

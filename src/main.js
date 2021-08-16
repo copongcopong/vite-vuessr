@@ -1,12 +1,11 @@
-import { createApp } from 'vue'
 import './tailwind.css'
 import App from './App.vue'
-import { createRouter } from './router'
 import { createPinia } from 'pinia'
 import viteSSR, { ClientOnly } from 'vite-ssr'
 import { createHead } from '@vueuse/head'
 
-import {routes} from './router/routes'
+import {routes} from './router/routes';
+import { createMiddleware } from './router/middleware';
 
 /*
 const app = createApp(App)
@@ -27,7 +26,7 @@ export default viteSSR(
     const pinia = createPinia()
     if (import.meta.env.SSR) {
       initialState.pinia = pinia.state.value
-      console.log('> ssr-vue ', request.headers)
+      console.log('> ssr-vue ', request.url)
     } else {
       pinia.state.value = initialState.pinia
     }
@@ -39,6 +38,9 @@ export default viteSSR(
     // In the server, 'initialState' is an empty object that can be mutated. It can be
     // passed to Vuex, or provide it to child components (see Homepage for an example).
     app.provide('initialState', initialState)
+
+    //add middleware
+    createMiddleware({router, pinia, request});
 
     // Before each route navigation we request the data needed for showing the page.
     router.beforeEach(async (to, from, next) => {
