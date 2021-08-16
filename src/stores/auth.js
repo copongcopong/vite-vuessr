@@ -42,7 +42,8 @@ export const useAuth = defineStore('auth', {
       cookies.set(cookiename, token);
       this.token = token;
     },
-    removeAuthTag () {
+    async removeAuthTag () {
+      //console.log('logut', cookies.get(cookiename))
       cookies.remove(cookiename);
     },
     async doLogin (params) {
@@ -61,7 +62,7 @@ export const useAuth = defineStore('auth', {
     },
     async doLogout () {
       localStorage.clear();
-      this.removeAuthTag();
+      await this.removeAuthTag();
       return true;
     }
   }
