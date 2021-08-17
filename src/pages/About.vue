@@ -29,5 +29,8 @@ import ButtonRepo from '@/components/ButtonRepo.vue'
         <ButtonRepo />
       </div>
     </div>
+    <p>
+      <img src="@/assets/images/logo.png" alt="" />
+    </p>
   </div>
 </template>
