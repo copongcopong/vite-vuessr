@@ -30,7 +30,7 @@ import ButtonRepo from '@/components/ButtonRepo.vue'
       </div>
     </div>
     <p>
-      <img src="@/assets/images/logo.png" alt="" />
+      <img src="@/assets/images/logo.jpg" alt="" width="250" />
     </p>
   </div>
 </template>
