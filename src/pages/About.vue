@@ -1,5 +1,10 @@
 <script setup>
 import ButtonRepo from '@/components/ButtonRepo.vue'
+import { useHead } from '@vueuse/head'
+
+useHead({
+  title: 'About - Vite in the VueSSR!'
+})
 </script>
 
 <template>
