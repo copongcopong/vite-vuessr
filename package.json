@@ -1,15 +1,16 @@
 {
   "name": "vite-vue-spa",
+  "description": "We're Vite in the VueSSR! -- The Beatles",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite --host",
-    "build": "vite build",
-    "vbuild": "vite-ssr build",
-    "serve": "vite preview",
-    "devssr": "vite-ssr dev",
-    "serve-ssr:dist": "npm run vbuild && nodemon server.js",
-    "serve:dist": "npm run build && sirv dist -s #needs `npm i sirv-cli -g`"
+    "dev": "VITE_STACK_MODE=spa vite --host",
+    "build": "VITE_STACK_MODE=spa vite build",
+    "serve": "VITE_STACK_MODE=spa vite preview",
+    "serve:dist": "VITE_STACK_MODE=spa npm run build && sirv dist -s #needs `npm i sirv-cli -g`",
+    "dev-ssr": "VITE_STACK_MODE=ssr vite-ssr dev",
+    "build-ssr": "VITE_STACK_MODE=ssr vite-ssr build",
+    "serve-ssr:dist": "VITE_STACK_MODE=ssr npm run build-ssr && nodemon server.js"
   },
   "dependencies": {
     "@vee-validate/rules": "^4.4.7",
