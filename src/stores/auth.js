@@ -2,6 +2,7 @@ import { defineStore } from 'pinia';
 import { createCookies } from '@vueuse/integrations';
 
 import axios from 'axios';
+import { waitFor } from '@/hooks/libs';
 
 const apiuri = import.meta.env.VITE_API_BASEURI;
 const cookiename = 'authToken';
@@ -60,6 +61,8 @@ export const useAuth = defineStore('auth', {
       return false;
     },
     async doLogout () {
+      //console.log('auth>logout', cookies.get(cookiename))
+      await waitFor(10);
       localStorage.clear();
       await this.removeAuthTag();
       return true;
