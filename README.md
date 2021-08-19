@@ -1,20 +1,22 @@
-# VITE-SSR + VUE3
+# Vite-VueSSR
 
  - Server Side Render (initial url load is created server-side.)
-  - based on https://github.com/frandiox/vite-ssr
-
- - uses vue-router/next
+  - based on https://github.com/frandiox/vite-ssr and https://github.com/web2033/vite-vue3-tailwind-starter
+ - uses vue 3 (composition api), vue-router, vueuse, vee-validate, universal-cookie, axios
+ - uses **polka** for ssr nodejs server and **sirv**
  - uses Pinia for store https://pinia.esm.dev/
 
+## Install
 
 ```
 npm i 
 ```
+## SSR mode
 
-Run local dev
+Run local dev (ssr version) 
 
 ```
-npm run devssr
+npm run dev-ssr
 
 ```
 
@@ -28,7 +30,28 @@ npm run serve-ssr:dist
 Build ssr version
 
 ```
-npm run vbuild
+npm run build-ssr
+```
+
+## SPA mode
+
+Run local dev 
+
+```
+npm run dev
+
+```
+Build spa
+
+```
+npm run build
+```
+
+Run local preview 
+
+```
+npm run serve
+
 ```
 
 ### Files and Folders
@@ -37,6 +60,9 @@ npm run vbuild
     - VITE_API_BASEURI = the api uri
 
 - `/src/pages/app` - main app pages folder
+- `/src/routes` - routing logic; see `middleware.js` on how stack handles authentication;
+   - uses `meta.auth` in `routes.js` for protected pages
+- `/src/stores` - pinia stores; `auth.js` handles authentication logic
 
 
 ## Gotchas
