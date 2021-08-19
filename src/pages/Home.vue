@@ -1,5 +1,6 @@
 <script setup>
 import ButtonRepo from '@/components/ButtonRepo.vue'
+import { NButton } from 'naive-ui'
 import { useHead } from '@vueuse/head'
 
 useHead({
@@ -18,6 +19,7 @@ useHead({
         Ready to dive in?
         <br />
         <span class="text-indigo-600">Vite 2.x + Vue 3.x + Tailwind 2.x</span>
+        
       </h2>
       <div class="flex mt-8 lg:flex-shrink-0 lg:mt-0">
         <div class="inline-flex rounded-md shadow">
@@ -27,7 +29,9 @@ useHead({
             >Next Page</router-link
           >
         </div>
-        <ButtonRepo />
+        <router-link to="/about">
+          <n-button tag="span">naive-ui</n-button>
+        </router-link>
       </div>
     </div>
   </div>

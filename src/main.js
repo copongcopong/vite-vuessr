@@ -1,4 +1,8 @@
 import './tailwind.css'
+import 'vfonts/Lato.css'
+// Monospace Font
+import 'vfonts/FiraCode.css'
+// then it works
 import App from './App.vue'
 import { createPinia } from 'pinia'
 import viteSSR, { ClientOnly } from 'vite-ssr'
