@@ -1,37 +1,45 @@
 {
   "name": "vite-vue-spa",
+  "description": "We're Vite in the VueSSR! -- The Beatles",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite --host",
-    "build": "vite build",
-    "serve": "vite preview",
-    "serve:dist": "npm run build && sirv dist -s #needs `npm i sirv-cli -g`"
+    "dev": "VITE_STACK_MODE=spa vite --host",
+    "build": "VITE_STACK_MODE=spa vite build",
+    "serve": "VITE_STACK_MODE=spa vite preview",
+    "serve:dist": "VITE_STACK_MODE=spa npm run build && sirv dist -s #needs `npm i sirv-cli -g`",
+    "dev-ssr": "VITE_STACK_MODE=ssr vite-ssr dev",
+    "build-ssr": "VITE_STACK_MODE=ssr vite-ssr build",
+    "serve-ssr:dist": "VITE_STACK_MODE=ssr npm run build-ssr && nodemon server.js"
   },
   "dependencies": {
     "@vee-validate/rules": "^4.4.7",
     "@vueuse/core": "^5.3.0",
+    "@vueuse/head": "^0.6.0",
     "@vueuse/integrations": "^5.3.0",
     "axios": "^0.21.1",
     "pinia": "^2.0.0-rc.4",
+    "polka": "^0.5.2",
+    "sirv": "^1.0.14",
     "sirv-cli": "^1.0.14",
     "universal-cookie": "^4.0.4",
     "vee-validate": "^4.4.9",
-    "vue": "^3.2.2",
+    "vite-ssr": "^0.12.1",
+    "vue": "^3.2.4",
     "vue-router": "^4.0.11"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.4.0",
-    "@heroicons/vue": "^1.0.3",
+    "@heroicons/vue": "^1.0.4",
     "@tailwindcss/aspect-ratio": "^0.2.1",
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/line-clamp": "^0.2.1",
     "@tailwindcss/typography": "^0.4.1",
-    "autoprefixer": "^10.3.1",
     "@types/tailwindcss": "^2.2.1",
-    "tailwindcss": "^2.2.7",
-    "@vue/compiler-sfc": "^3.2.2",
     "@vitejs/plugin-vue": "^1.4.0",
+    "@vue/compiler-sfc": "^3.2.4",
+    "autoprefixer": "^10.3.1",
+    "tailwindcss": "^2.2.7",
     "vite": "^2.5.0-beta.3"
   }
 }

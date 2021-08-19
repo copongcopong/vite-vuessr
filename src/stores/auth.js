@@ -1,9 +1,12 @@
 import { defineStore } from 'pinia';
-import { useCookies } from '@vueuse/integrations/useCookies';
+import { createCookies } from '@vueuse/integrations';
+
 import axios from 'axios';
+import { waitFor } from '@/hooks/libs';
 
 const apiuri = import.meta.env.VITE_API_BASEURI;
-const cookies = useCookies(['authToken']);
+const cookiename = 'authToken';
+let ucookies, cookies;
 export const useAuth = defineStore('auth', {
   state () {
     var a, user, token, expires;
@@ -23,20 +26,25 @@ export const useAuth = defineStore('auth', {
     }
   },
   actions: {
+    initCookie (request) {
+      ucookies = createCookies(request);
+      cookies = ucookies([cookiename]);
+    },
     isLoggedIn () {
       
-      const ok = cookies.get('authToken');
+      const ok = cookies.get(cookiename);
 
-      console.log('isloggedin', ok, !!ok)
+      //console.log('isloggedin', !!ok)
 
       return !!ok;
     },
     tagAsAuth (token) {
-      cookies.set('authToken', token);
+      cookies.set(cookiename, token);
       this.token = token;
     },
-    removeAuthTag () {
-      cookies.remove('authToken');
+    async removeAuthTag () {
+      //console.log('logut', cookies.get(cookiename))
+      cookies.remove(cookiename);
     },
     async doLogin (params) {
       console.log(params);
@@ -53,8 +61,10 @@ export const useAuth = defineStore('auth', {
       return false;
     },
     async doLogout () {
+      //console.log('auth>logout', cookies.get(cookiename))
+      await waitFor(10);
       localStorage.clear();
-      this.removeAuthTag();
+      await this.removeAuthTag();
       return true;
     }
   }
