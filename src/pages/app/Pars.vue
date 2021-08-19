@@ -22,7 +22,7 @@ export default {
     //to test, click to /pars/1 then click to /pars/2; parsId in template should change
     //use case like trigger new server call to change data show
     const route = useRoute();
-    console.log(route.path, route.name, route.fullPath, route)
+    //console.log(route.path, route.name, route.fullPath, route)
     const parsId = ref(route.params.id);
     const stop = watch(() => route.params.id, async (nval, oval) => {
       console.log('watch', {oval, nval});
@@ -46,7 +46,7 @@ export default {
       console.log('qId', {n, v})
     })
 
-    console.log('setup', parsId, route.params, route.query);
+    console.log('setup', route.params, route.query);
 
     //sample pageState usage; good for not-changing route params or query
     const preData = await usePageState(() => {

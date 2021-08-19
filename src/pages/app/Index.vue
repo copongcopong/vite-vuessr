@@ -1,3 +1,3 @@
 <template>
-  <h1>Main</h1>
+  <h1>The Main App Home page</h1>
 </template>

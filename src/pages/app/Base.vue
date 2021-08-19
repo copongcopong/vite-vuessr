@@ -1,7 +1,8 @@
 <template>
+  <!-- acts as the base layout for child routes of /app -->
   <div>
     <header>
-      <h4>Base App</h4>
+      <h4>The Main App Section</h4>
       <router-link to="/">home</router-link> |
       <router-link to="/about">about</router-link> |
       <router-link to="/app">app</router-link> |
