@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@vee-validate/rules": "^4.4.7",
-    "@vueuse/core": "^6.0.0",
+    "@vueuse/core": "^6.2.1",
     "@vueuse/head": "^0.6.0",
     "@vueuse/integrations": "^6.0.0",
     "axios": "^0.21.1",
