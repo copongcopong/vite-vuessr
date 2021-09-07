@@ -39,7 +39,7 @@
     "@vitejs/plugin-vue": "^1.6.0",
     "@vue/compiler-sfc": "^3.2.9",
     "autoprefixer": "^10.3.4",
-    "tailwindcss": "^2.2.9",
+    "tailwindcss": "^2.2.10",
     "vite": "^2.5.3"
   }
 }
