@@ -23,7 +23,7 @@
     "sirv": "^1.0.17",
     "sirv-cli": "^1.0.14",
     "universal-cookie": "^4.0.4",
-    "vee-validate": "^4.4.10",
+    "vee-validate": "^4.4.11",
     "vite-ssr": "^0.13.1",
     "vue": "^3.2.10",
     "vue-router": "^4.0.11"
