@@ -3,13 +3,13 @@ import { createStore } from '@/hooks/app/data-store';
 import { nanoid } from 'nanoid';
 
 export const useAuth = (initData) => {
-  const TOKEN = 'authToken';
+  const TOKEN = import.meta.env.VITE_AUTH_TOKEN_NAME;
   let cookie;
-  
+  let context;
   if (initData) {
     //console.log('init called', init)
     if (initData.ctx) {
-      
+      context = initData.ctx;
       if (initData.ctx.request?.headers?.cookie) {
         console.log('> cookie init from headers')
       }
@@ -23,6 +23,7 @@ export const useAuth = (initData) => {
   }
 
   return createStore('auth', {
+    ctx: context,
     data: {'name': 'auth', auth: null},
     init () {
       //if (initData.ctx) {

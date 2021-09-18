@@ -19,15 +19,22 @@
 import { useAuth } from '@/hooks/app/auth';
 import { useTest } from '@/hooks/app/test';
 import { onMounted, onUnmounted } from 'vue';
+import { useAppUtils } from '@/hooks/app/utils';
+
 export default {
-  setup() {
+  async setup() {
+    const { $ax } = useAppUtils();
     const auth = useAuth();
     const me = auth.$data;
     const test = useTest();
     var ctr, ctr2;
-    onMounted(() => {
+
       
-     
+  
+    
+    onMounted(async () => {
+      
+     //var resp = await $ax.get('ajax/call');
       test.set('countdown.ctr', 0)
       ctr = setInterval(() => {
 
