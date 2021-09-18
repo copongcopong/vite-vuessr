@@ -62,7 +62,7 @@ npm run serve
 - `/src/pages/app` - main app pages folder
 - `/src/routes` - routing logic; see `middleware.js` on how stack handles authentication;
    - uses `meta.auth` in `routes.js` for protected pages
-- `/src/stores` - pinia stores; `auth.js` handles authentication logic
+- `/src/hooks` - logic and simple store
 
 
 ## Gotchas
