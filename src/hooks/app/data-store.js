@@ -1,5 +1,4 @@
-import { nanoid } from 'nanoid';
-import {reactive, ref, readonly} from 'vue';
+import {reactive, readonly} from 'vue';
 import { get, set } from 'lodash';
 let cache = {};
 class Store {
