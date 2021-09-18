@@ -4,7 +4,7 @@
   - based on https://github.com/frandiox/vite-ssr and https://github.com/web2033/vite-vue3-tailwind-starter
  - uses vue 3 (composition api), vue-router, vueuse, vee-validate, universal-cookie, axios
  - uses **polka** for ssr nodejs server and **sirv**
- - uses Pinia for store https://pinia.esm.dev/
+ - uses simple store based on vue3 reactive pattern
 
 ## Install
 

@@ -12,7 +12,7 @@
   </section>
 </template>
 <script>
-import { useAuth } from '@/stores/auth';
+import { useAuth } from '@/hooks/app/auth';
 import { Field, useForm } from 'vee-validate';
 import { useRouter, useRoute } from 'vue-router'
 

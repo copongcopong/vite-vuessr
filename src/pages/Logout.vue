@@ -7,7 +7,7 @@
 </template>
 <script>
 import { onMounted } from "vue";
-import { useAuth } from '@/stores/auth';
+import { useAuth } from '@/hooks/app/auth';
 import { useRouter } from 'vue-router';
 export default {
   setup () {

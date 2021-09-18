@@ -8,25 +8,25 @@
     "build": "VITE_STACK_MODE=spa vite build",
     "serve": "VITE_STACK_MODE=spa vite preview",
     "serve:dist": "VITE_STACK_MODE=spa npm run build && sirv dist -s #needs `npm i sirv-cli -g`",
-    "dev-ssr": "VITE_STACK_MODE=ssr vite-ssr dev",
+    "dev-ssr": "VITE_STACK_MODE=ssr vite-ssr dev --port 3010",
     "build-ssr": "VITE_STACK_MODE=ssr vite-ssr build",
     "serve-ssr:dist": "VITE_STACK_MODE=ssr npm run build-ssr && node server.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@vee-validate/rules": "^4.4.7",
-    "@vueuse/core": "^6.3.3",
+    "@vueuse/core": "^6.4.1",
     "@vueuse/head": "^0.6.0",
-    "@vueuse/integrations": "^6.3.3",
+    "@vueuse/integrations": "^6.4.1",
     "axios": "^0.21.4",
-    "pinia": "^2.0.0-rc.9",
+    "lodash": "^4.17.21",
     "polka": "^0.5.2",
     "sirv": "^1.0.17",
     "sirv-cli": "^1.0.14",
     "universal-cookie": "^4.0.4",
     "vee-validate": "^4.4.11",
-    "vite-ssr": "^0.13.1",
-    "vue": "^3.2.10",
+    "vite-ssr": "^0.13.2",
+    "vue": "^3.2.12",
     "vue-draggable-next": "^2.0.1",
     "vue-router": "^4.0.11"
   },
@@ -39,9 +39,9 @@
     "@tailwindcss/typography": "^0.4.1",
     "@types/tailwindcss": "^2.2.1",
     "@vitejs/plugin-vue": "^1.6.2",
-    "@vue/compiler-sfc": "^3.2.11",
+    "@vue/compiler-sfc": "^3.2.12",
     "autoprefixer": "^10.3.4",
     "tailwindcss": "^2.2.15",
-    "vite": "^2.5.7"
+    "vite": "^2.5.8"
   }
 }

@@ -1,10 +1,9 @@
-import { useAuth } from '@/stores/auth';
+import { useAuth } from '@/hooks/app/auth';
 export { createMiddleware };
 
 function createMiddleware (context) {
-  const { pinia, router, request } = context;
-  const auth = useAuth(pinia);
-  auth.initCookie(request); //required for SSR compatibility of auth.isLoggedIn()
+  const { router, request } = context;
+  const auth = useAuth({ctx: context});
   router.beforeEach((to, from, next) => {
     //const auth = useAuth(pinia);
     var at = (import.meta.env.SSR) ? 'ssr' : 'client';

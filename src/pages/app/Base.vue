@@ -11,7 +11,7 @@
       <router-link to="/app/pars/2">p 2</router-link> |
       <router-link to="/app/pars/3?qid=1">q 2</router-link> |
       <router-link to="/app/pars/3?qid=2">q 2</router-link> |
-      
+      <router-link to="/logout">logout</router-link> |
     </header>
     <section>
       <router-view v-slot="{ Component }">

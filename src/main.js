@@ -1,9 +1,7 @@
 import './tailwind.css'
 import App from './App.vue'
-import { createPinia } from 'pinia'
 import viteSSR, { ClientOnly } from 'vite-ssr'
 import { createHead } from '@vueuse/head'
-
 import {routes} from './router/routes';
 import { createMiddleware } from './router/middleware';
 import { createRouter } from './router';
@@ -13,10 +11,8 @@ let init;
 if (import.meta.env.VITE_STACK_MODE === 'spa') {
 
   const app = createApp(App)
-  const pinia = createPinia()
-  const router = createRouter(pinia)
+  const router = createRouter()
   
-  app.use(pinia)
   app.use(router)
   const head = createHead()
   app.use(head)
@@ -26,27 +22,24 @@ if (import.meta.env.VITE_STACK_MODE === 'spa') {
    init = viteSSR(
     App,
     { routes },
-    ({ app, router, isClient, url, initialState, initialRoute, request }) => {
-      const head = createHead()
-      app.use(head)
-      const pinia = createPinia()
+    (context) => {
+      const { app, router, isClient, url, initialState, initialRoute, request } = context;
+      const head = createHead();
+      app.use(head);
       if (import.meta.env.SSR) {
-        initialState.pinia = pinia.state.value
-        console.log('> ssr-vue ', request.url)
+        console.log('> ssr-vue ', request.url);
       } else {
-        pinia.state.value = initialState.pinia
       }
-      app.use(pinia)
-      app.component(ClientOnly.name, ClientOnly)
+      app.component(ClientOnly.name, ClientOnly);
   
       // The 'initialState' is hydrated in the browser and can be used to
       // pass it to Vuex, for example, if you prefer to rely on stores rather than page props.
       // In the server, 'initialState' is an empty object that can be mutated. It can be
       // passed to Vuex, or provide it to child components (see Homepage for an example).
-      app.provide('initialState', initialState)
+      app.provide('initialState', initialState);
   
       //add middleware
-      createMiddleware({router, pinia, request});
+      createMiddleware(context);
   
       // Before each route navigation we request the data needed for showing the page.
       router.beforeEach(async (to, from, next) => {

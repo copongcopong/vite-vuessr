@@ -7,11 +7,11 @@
   <p>qId {{qId}}</p>
 </template>
 <script>
-import { useAuth } from '@/stores/auth';
+import { useAuth } from '@/hooks/app/auth';
 import { usePageState } from '@/hooks/page-state';
 import { useRouteParams, useQueryParams } from '@/hooks/route-params';
 import { useRoute } from 'vue-router';
-import { ref, watch, onUnmounted } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 
 export default {
 
@@ -29,11 +29,12 @@ export default {
       parsId.value = nval;
     });
     //needed to stop the watcher
-    onUnmounted(() => {
-      console.log('unmounted')
+    onMounted(() => {
+      console.log('mounted', auth.$data)
       stop()
     });
     //--- end pattern doc
+
 
 
     //new composable/hook for a reactive route params
