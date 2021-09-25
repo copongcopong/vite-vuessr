@@ -19,6 +19,7 @@
     "@vueuse/head": "^0.6.0",
     "@vueuse/integrations": "^6.5.3",
     "axios": "^0.21.4",
+    "dotenv": "^10.0.0",
     "hyper-express": "^3.1.1",
     "lodash": "^4.17.21",
     "mime-types": "^2.1.32",
