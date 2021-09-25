@@ -39,12 +39,20 @@ axiosInstance.interceptors.response.use(function (response) {
 
 function getAuthToken () {
   const auth = useAuth();
+  return auth.isLoggedIn();
+  
   if (auth.$ctx) {
     var ctx = auth.$ctx;
     var request = {};
     if (ctx.request) request = ctx.request;
+    let serverCookies
+    if (ctx.cookies) {
+      serverCookies = ctx.cookies;
+    } else {
+      serverCookies = request?.headers?.cookie
+    }
     const t = TOKEN
-    const cookie = new Cookies(request?.headers?.cookie)
+    const cookie = new Cookies(serverCookies)
     return cookie.get(t)
   }
   return null;

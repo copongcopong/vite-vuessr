@@ -2,10 +2,11 @@ import { useAuth } from '@/hooks/app/auth';
 export { createMiddleware };
 
 function createMiddleware (context) {
-  const { router, request } = context;
+  const { router, request, cookies } = context;
+  console.log('createMiddleware', cookies)
   const auth = useAuth({ctx: context});
   router.beforeEach((to, from, next) => {
-    //const auth = useAuth(pinia);
+
     var at = (import.meta.env.SSR) ? 'ssr' : 'client';
     console.log(at + ':router > mid ', {to: to.path, isLoggedIn: auth.isLoggedIn()});
 

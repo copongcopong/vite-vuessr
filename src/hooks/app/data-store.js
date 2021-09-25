@@ -9,7 +9,7 @@ class Store {
     if (methods) {
       var k;
       for(k in methods) {
-        this[k] = methods[k].bind(this)
+        if (methods[k] && typeof methods[k] == 'function') this[k] = methods[k].bind(this)
       }
 
       if (this.init) {
