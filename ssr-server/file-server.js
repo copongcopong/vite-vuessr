@@ -28,7 +28,7 @@ module.exports = (dir) => (req, res, next) => {
     if (!fileStats) {
       console.log({filePath})
       res.status('404');
-      res.end();
+      res.raw.end();
       return;
   }
 
