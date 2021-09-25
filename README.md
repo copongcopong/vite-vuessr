@@ -5,6 +5,7 @@
  - uses vue 3 (composition api), vue-router, vueuse, vee-validate, universal-cookie, axios
  - uses **hyper-express** for ssr nodejs server (hyper-express uses uWebSockets.js under the hood)
  - uses simple store based on vue3 reactive pattern
+ - checkout **nginx-sample.conf** for nginx configuration in handling static assets and the vite-vuessr app
 
 ## Install
 
