@@ -1,3 +1,4 @@
+require('dotenv').config()
 const fileServer = require('./ssr-server/file-server');
 const HyperExpress = require('hyper-express');
 const server = new HyperExpress.Server();
