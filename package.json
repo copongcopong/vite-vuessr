@@ -25,7 +25,6 @@
     "sirv": "^1.0.17",
     "sirv-cli": "^1.0.14",
     "universal-cookie": "^4.0.4",
-    "uwebsocket-serve": "^1.0.4",
     "vee-validate": "^4.4.11",
     "vite-ssr": "^0.13.2",
     "vue": "^3.2.18",
