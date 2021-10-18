@@ -24,7 +24,7 @@
     "sirv": "^1.0.17",
     "sirv-cli": "^1.0.14",
     "universal-cookie": "^4.0.4",
-    "vee-validate": "^4.4.11",
+    "vee-validate": "^4.5.3",
     "vite-ssr": "^0.13.1",
     "vue": "^3.2.10",
     "vue-draggable-next": "^2.0.1",
