@@ -20,7 +20,7 @@
     "@vueuse/integrations": "^7.5.5",
     "axios": "^0.25.0",
     "dotenv": "^14.3.2",
-    "hyper-express": "^5.7.0",
+    "hyper-express": "^5.7.1",
     "lodash": "^4.17.21",
     "mime-types": "^2.1.34",
     "primeflex": "^3.1.2",
