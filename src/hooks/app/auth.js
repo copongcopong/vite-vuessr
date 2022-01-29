@@ -53,6 +53,7 @@ export const useAuth = (initData) => {
       return true;
     },
     async doLogin (pars) {
+      // set ajax/server call here to initiate login
       console.log('sett after login', pars)
       this.set('auth', pars)
       this.set('deep.is', 'how')

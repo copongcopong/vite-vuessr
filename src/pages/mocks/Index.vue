@@ -29,9 +29,7 @@ export default {
     const test = useTest();
     var ctr, ctr2;
 
-    var resp = await $ax.get('ajax/call');
-     console.log('/app resp', resp)
-  
+    
     
     onMounted(async () => {
       
