@@ -1,10 +1,13 @@
-# Vite-VueSSR in Hyper-Express
+# Vite-VueSSR in Hyper-Express and PrimeVue
 
  - Server Side Render (initial url load is created server-side.)
   - based on https://github.com/frandiox/vite-ssr and https://github.com/web2033/vite-vue3-tailwind-starter
  - uses vue 3 (composition api), vue-router, vueuse, vee-validate, universal-cookie, axios
  - uses **hyper-express** for ssr nodejs server (hyper-express uses uWebSockets.js under the hood)
  - uses simple store based on vue3 reactive pattern
+ - uses PrimeVue and PrimeFlex for UI Components (prefix: `Pv`)
+ - uses @antfu's unplugin-vue-components
+    - https://github.com/antfu/unplugin-vue-components
  - checkout **nginx-sample.conf** for nginx configuration in handling static assets and the vite-vuessr app
 
 ## Install

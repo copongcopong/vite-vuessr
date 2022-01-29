@@ -1,4 +1,4 @@
-import './tailwind.css'
+// import './tailwind.css'
 import App from './App.vue'
 import viteSSR, { ClientOnly } from 'vite-ssr'
 import { createHead } from '@vueuse/head'
@@ -6,6 +6,12 @@ import {routes} from './router/routes';
 import { createMiddleware } from './router/middleware';
 import { createRouter } from './router';
 import { createApp } from 'vue';
+import PrimeVue from 'primevue/config';
+
+import 'primevue/resources/themes/saga-blue/theme.css';
+import 'primevue/resources/primevue.min.css';
+import 'primeicons/primeicons.css'; 
+
 let init;
 
 if (import.meta.env.VITE_STACK_MODE === 'spa') {
@@ -13,6 +19,7 @@ if (import.meta.env.VITE_STACK_MODE === 'spa') {
   const app = createApp(App)
   const router = createRouter()
   
+  app.use(PrimeVue);
   app.use(router)
   const head = createHead()
   app.use(head)
@@ -25,6 +32,7 @@ if (import.meta.env.VITE_STACK_MODE === 'spa') {
     (context) => {
       const { app, router, isClient, url, initialState, initialRoute, request } = context;
       const head = createHead();
+      app.use(PrimeVue);
       app.use(head);
       if (import.meta.env.SSR) {
         console.log('> ssr-vue ', request.url);

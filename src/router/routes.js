@@ -24,6 +24,15 @@ export const routes = [
       
     ]
   },
+  {
+    path: '/mocks',
+    component: () => import('@/pages/mocks/Base.vue'),
+    children: [
+      {path: '', component: () => import('@/pages/mocks/Index.vue')},
+      {path: 'pars/:id?', component: () => import('@/pages/mocks/Pars.vue')}
+      
+    ]
+  },
   {path: '/login', component: () => import('@/pages/Login.vue')},
   {path: '/logout', component: () => import('@/pages/Logout.vue')},
   { path: '/:path(.*)', component: NotFound },

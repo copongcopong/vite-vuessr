@@ -3,6 +3,13 @@ import vue from '@vitejs/plugin-vue'
 import viteSSR from 'vite-ssr/plugin.js'
 import path from 'path'
 
+
+import Components from 'unplugin-vue-components/vite'
+import {
+  PrimeVueResolver,
+} from 'unplugin-vue-components/resolvers'
+
+
 export default defineConfig({
   plugins: [
     viteSSR(),
@@ -11,6 +18,11 @@ export default defineConfig({
         refSugar: true,
       },
     }),
+    Components({
+      resolvers: [
+        PrimeVueResolver({prefix: 'Pv'}),
+      ]
+    })
   ],
   resolve: {
     alias: {
@@ -19,5 +31,5 @@ export default defineConfig({
   },
   server: {
     open: true,
-  },
+  }
 })
