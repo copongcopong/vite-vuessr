@@ -19,7 +19,7 @@
     "@vueuse/head": "^0.7.5",
     "@vueuse/integrations": "^7.5.5",
     "axios": "^0.25.0",
-    "pinia": "^2.0.9",
+    "pinia": "^2.0.16",
     "polka": "^0.5.2",
     "sirv": "^2.0.2",
     "sirv-cli": "^2.0.2",
