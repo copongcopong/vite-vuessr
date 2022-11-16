@@ -13,7 +13,7 @@
     "serve-ssr:dist": "VITE_STACK_MODE=ssr npm run build-ssr && node server.js"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-free": "^6.2.1",
     "@vee-validate/rules": "^4.5.7",
     "@vueuse/core": "^7.5.5",
     "@vueuse/head": "^0.7.5",
