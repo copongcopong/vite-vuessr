@@ -17,7 +17,7 @@
     "@vee-validate/rules": "^4.5.7",
     "@vueuse/core": "^7.5.5",
     "@vueuse/head": "^0.7.5",
-    "@vueuse/integrations": "^7.5.5",
+    "@vueuse/integrations": "^9.11.0",
     "axios": "^0.25.0",
     "pinia": "^2.0.9",
     "polka": "^0.5.2",
