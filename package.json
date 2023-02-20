@@ -15,7 +15,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@vee-validate/rules": "^4.5.7",
-    "@vueuse/core": "^7.5.5",
+    "@vueuse/core": "^9.13.0",
     "@vueuse/head": "^0.7.5",
     "@vueuse/integrations": "^7.5.5",
     "axios": "^0.25.0",
